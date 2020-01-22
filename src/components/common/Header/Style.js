@@ -14,11 +14,33 @@ const HeaderWraper = styled.div`
             border-radius:20px;
             padding: 21px;
             border: 1px solid rgba(34,36,38,.15);
+            &:focus{
+                border-color: #85b7d9;
+                box-shadow: none;
+            }
         }
         i.fal.fa-search {
             position: absolute;
             top: 15px;
             right: 29px;
+        }
+    }
+    .search-results{
+        position: absolute;
+        top: 100%;
+        left: 13px;
+        z-index: 200;
+        padding: 11px 13px;
+        border-radius: 10px;
+        background-color: white;
+        width: calc(100% - 26px);
+        border: 1px solid rgb(211, 211, 211);
+        margin-top:10px;
+        padding:20px 10px;
+        .no-results{
+            color:gray;
+            font-size:14px;
+            padding-left:10px;
         }
     }
    

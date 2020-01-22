@@ -2,10 +2,13 @@ import React from 'react';
 import {
     Container
 } from 'react-bootstrap'
+import Style from './Style'
  export default function(){
      return(
-         <Container>
-             <img src={require("../../assets/images/banner.png")}/>
-         </Container>
+         <Style>
+            <Container className='d-flex'> 
+                <img src={require("../../assets/images/banner.png")}/>
+            </Container>
+         </Style>
      )
  }
