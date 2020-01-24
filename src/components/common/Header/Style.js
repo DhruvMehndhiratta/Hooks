@@ -30,17 +30,38 @@ const HeaderWraper = styled.div`
         top: 100%;
         left: 13px;
         z-index: 200;
-        padding: 11px 13px;
         border-radius: 10px;
         background-color: white;
         width: calc(100% - 26px);
         border: 1px solid rgb(211, 211, 211);
         margin-top:10px;
-        padding:20px 10px;
+        padding:0;
+            li{
+                list-style: none;
+                padding: 10px;
+                cursor: pointer;
+                display: block;
+                overflow: hidden;
+                font-size: 1em;
+                padding: .85714286em 1.14285714em;
+                color: rgba(0,0,0,.87);
+                line-height: 1.33;
+                border-bottom: 1px solid rgba(34,36,38,.1);
+                    &:last-child{
+                        border-bottom:none;
+                    }
+                    img{
+                        width: 4em;
+                        height: auto;
+                    }
+                    &:hover{
+                         background: #f9fafb;
+                    }
+            }
         .no-results{
+            padding:20px 0px 20px 10px;
             color:gray;
             font-size:14px;
-            padding-left:10px;
         }
     }
    

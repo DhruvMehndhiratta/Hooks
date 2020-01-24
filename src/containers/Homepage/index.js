@@ -7,7 +7,7 @@ import Style from './Style'
      return(
          <Style>
             <Container className='d-flex'> 
-                <img src={require("../../assets/images/banner.png")}/>
+                <img src={require("../../assets/images/banner.png")} alt='banner'/>
             </Container>
          </Style>
      )
