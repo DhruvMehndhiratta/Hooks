@@ -6,7 +6,8 @@ import {
   } from "react-router-dom";
 
 import {
-    Homepage
+    Homepage,
+    Products
 } from './containers';
 import { Header } from './components';
 
@@ -27,6 +28,7 @@ const Routes = () => (
     <Router >
         <Switch>
             <PublicRoute exact path="/" component={Homepage}/>
+            <PublicRoute path="/products" component={Products}/>
         </Switch>
     </Router>
 );

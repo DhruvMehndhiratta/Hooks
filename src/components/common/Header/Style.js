@@ -30,11 +30,11 @@ const HeaderWraper = styled.div`
         top: 100%;
         left: 13px;
         z-index: 200;
-        border-radius: 10px;
         background-color: white;
         width: calc(100% - 26px);
         border: 1px solid rgb(211, 211, 211);
         margin-top:10px;
+        border-radius: 10px;
         padding:0;
             li{
                 list-style: none;
@@ -46,6 +46,8 @@ const HeaderWraper = styled.div`
                 padding: .85714286em 1.14285714em;
                 color: rgba(0,0,0,.87);
                 line-height: 1.33;
+               
+                z-index: 99999;
                 border-bottom: 1px solid rgba(34,36,38,.1);
                     &:last-child{
                         border-bottom:none;

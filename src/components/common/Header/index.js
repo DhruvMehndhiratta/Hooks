@@ -11,6 +11,7 @@ import Style from './Style';
 import { useDispatch,useSelector } from 'react-redux'
 import actions from '../../../actions';
 import _ from "lodash";
+import { useHistory } from "react-router-dom";
 
 function Header() {
     const dispatch = useDispatch()
@@ -18,8 +19,6 @@ function Header() {
     const [search,handleAutocomplete] = useState("");
     const autocomplete = useSelector(state => state.autocomplete);
     const { searchSuggestions =  []} = autocomplete;
-    console.log(searchSuggestions , "searchSuggestions")
-
     const delayedQuery = _.debounce(q => dispatch(actions.getAutocompleteResults(q)), 1000);
 
     const handleChange = e => {
@@ -27,7 +26,12 @@ function Header() {
       delayedQuery(e.target.value);
     };
 
-    
+    let history = useHistory();
+
+    const handleProducts = (item) => {
+        history.push(`/products?product=${item}`)
+    }
+
     return (
         <Style>
             <Container fluid className='header-section'>
@@ -41,15 +45,15 @@ function Header() {
                             placeholder="What are you looking for?"
                             className='Form-control'
                             onFocus={() => handleSearchOptions(true)}
-                            onBlur={() => handleSearchOptions(false)}
+                            onBlur={(e) =>handleSearchOptions(false)}
                             value={search}
                             onChange={handleChange}
                         />
                         <i className="fal fa-search"></i>
-                            {showOptions &&  <ul className='search-results'>{
+                            {showOptions && <ul className='search-results'>{
                                 searchSuggestions && searchSuggestions.length  ? 
-                                    searchSuggestions.map((item,i)=> <li key={i}>
-                                        <div className='d-flex justify-content-between align-items-center'>
+                                    searchSuggestions.map((item,i)=> <li key={i} onMouseDown={() => handleProducts(item.title)}>
+                                        <div className='d-flex justify-content-between align-items-center' >
                                             <div>
                                                 <p>{item.title}</p> 
                                                     <div className='d-flex'>
@@ -68,7 +72,6 @@ function Header() {
                             
                         </ul>}
                     </Col>
-
                 </Row>
             </Container>
         </Style>
