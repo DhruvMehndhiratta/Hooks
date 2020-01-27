@@ -8,7 +8,6 @@ export const getSearchResults = (query) => {
         })
         try{
             const res = await getSearchResultsAPI(query);
-            console.log(res , "res");
             dispatch({
                 type:types.GET_PRODUCTS_RESULTS_SUCCESS,
                 payload:res.result

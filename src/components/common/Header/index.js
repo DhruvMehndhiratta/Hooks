@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import {
     Row,
     Col,
@@ -63,7 +63,7 @@ function Header() {
                                                
                                             </div>
                                             <div>
-                                                <img src={item.imageUrl}/> 
+                                                <img src={item.imageUrl} alt='suggestions'/> 
                                             </div>
                                         </div>
                                     </li>)                                

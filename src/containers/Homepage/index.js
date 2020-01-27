@@ -2,7 +2,8 @@ import React from 'react';
 import {
     Container
 } from 'react-bootstrap'
-import Style from './Style'
+import Style from './Style';
+
  export default function(){
      return(
          <Style>
